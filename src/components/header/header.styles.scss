@@ -1,0 +1,29 @@
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  @media screen and(max-width: 800px) {
+    padding: 12px 20px;
+  }
+  
+  .logo-container {
+    width: 27%;
+    
+
+    @media screen and(max-width: 1200px) {
+      width: 16%;
+    }
+    @media screen and(max-width: 800px) {
+      width: 24%;
+    }
+  }
+
+  .logo {
+    opacity: 0.16;
+  }
+}

@@ -1,16 +1,16 @@
 import React from 'react';
 
-import logo from './logo.svg';
 import './App.css';
 
+import Header from './components/header/header.component';
 import List from './components/list/list.component';
 import ITEMS_LIST from './components/list/list.data';
 
 const App = () => {
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
-        <img src={ logo } className="App-logo" alt="logo" />
         <List itemsList={ [...ITEMS_LIST] } />
         <List itemsList={ ["Get bread", "Get eggs"] } />
       </header>
