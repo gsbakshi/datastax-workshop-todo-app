@@ -2,3 +2,8 @@
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
+
+.todoapp {
+  display: flex;
+  justify-content: center;
+}

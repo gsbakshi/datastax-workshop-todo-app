@@ -3,17 +3,17 @@ import React from 'react';
 import './App.css';
 
 import Header from './components/header/header.component';
-import List from './components/list/list.component';
-import ITEMS_LIST from './components/list/list.data';
+import Footer from './components/footer/footer.component';
+import TodoApp from './page/todo-app/todo-app.component';
 
 const App = () => {
   return (
     <div className="App">
       <Header />
-      <header className="App-header">
-        <List itemsList={ [...ITEMS_LIST] } />
-        <List itemsList={ ["Get bread", "Get eggs"] } />
-      </header>
+      <div className='todoapp' >
+        <TodoApp />
+      </div>
+      <Footer />
     </div>
   );
 };
