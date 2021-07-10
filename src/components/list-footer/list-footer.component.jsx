@@ -16,7 +16,7 @@ const FILTERS_LIST = [
 
 const ListFooter = ({ activeCount, filter : selectedFilter, onShowFiltered, }) => {
 
-    // Logger to track active items change
+    // Logger to track active items change in console
     useEffect(
         () => {
             console.log("PROP Change: Active items is %d", activeCount);
