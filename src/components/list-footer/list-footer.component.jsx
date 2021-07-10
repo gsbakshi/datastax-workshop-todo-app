@@ -48,6 +48,12 @@ const ListFooter = ({ activeCount, filter : selectedFilter, onShowFiltered, }) =
                     )
                 }
             </div>
+
+            {/* { anyDone && (
+                <button className="clear-completed" onClick={ onClearCompleted }>
+                    Clear completed
+                </button>
+            ) } */}
         </div>
     );
 };

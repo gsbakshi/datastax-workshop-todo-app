@@ -1,49 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+import './todo-list.styles.scss';
 
 import Todo from '../todo/todo.component';
-import ListFooter from '../list-footer/list-footer.component';
 
-const TODO_FILTERS = {
-    SHOW_ALL: () => true,
-    SHOW_ACTIVE: (todo) => !todo.completed,
-    SHOW_COMPLETED: (todo) => todo.completed,
-};
+const TodoList = ({ filteredTodos, actions }) => {
 
-const TodoList = ({ todos, actions }) => {
-    const [filter, setFilter] = useState('SHOW_ALL');
+    // const onToggleAll = () => {
+    //         filteredTodos.forEach(todo => todo.id === id ? todo.completed : todo);
+    //     };
 
-    const filterHandler = (filter) => {
-        setFilter(filter);
-    };
-
-    const clearCompletedTodosHandler = () => {
-        actions.clearCompletedTodosHandler();
-    };
-
-    const renderListFooter = (completedCount) => {
-        const activeCount = todos.length - completedCount;
-        if (todos.length) {
-            return (
-                <ListFooter
-                    completedCount={ completedCount }
-                    activeCount={ activeCount }
-                    filter={ filter }
-                    onShowFiltered={ filterHandler }
-                    onClearCompleted={ clearCompletedTodosHandler }
-                />
-            );
-        };
-    };
-
-    const filteredTodos = todos.filter(TODO_FILTERS[filter]);
-
-    const completedCount = todos.reduce(
-        (accumulator, todo) => todo.completed ? accumulator + 1 : accumulator,
-        0
-    );
+    // const allSelected = () => filteredTodos.every(todo => todo.completed);
 
     return (
-        <section className='main' >
+        <section className='list-container'>
+            <input
+                id="toggle-all"
+                type="checkbox"
+                className="toggle-all"
+                // checked={ allSelected }
+                // onChange={ onToggleAll }
+            />
+            <label htmlFor="toggle-all" />
             <div className='todo-list' >
                 {
                     filteredTodos.map(
@@ -57,9 +35,7 @@ const TodoList = ({ todos, actions }) => {
                     )
                 }
             </div>
-            {
-                renderListFooter(completedCount)
-            }
+            
         </section>
     );
 };

@@ -49,17 +49,31 @@
                 text-decoration: none;
                 border: 1px solid transparent;
                 border-radius: 3px;
-            }
-            
-            :hover {
-                border-color: #DB7676;
-            }
-            
-            .selected {
-                border-color: #CE4646;
+                
+                &:hover {
+                    border-color: #DB7676;
+                }
+                
+                &.selected {
+                    border-color: #CE4646;
+                }
             }
         }
     }
 
+    .clear-completed{
+
+        &:active {
+            float: right;
+            position: relative;
+            line-height: 19px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 
 }

@@ -6,7 +6,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-
+  
   @media screen and(max-width: 800px) {
     padding: 12px 20px;
   }
@@ -14,12 +14,13 @@
   .logo-container {
     width: 27%;
     
-
+    
     @media screen and(max-width: 1200px) {
-      width: 16%;
+      width: 36%;
     }
     @media screen and(max-width: 800px) {
-      width: 24%;
+      width: 56%;
+      padding: 30px 10px;
     }
   }
 
