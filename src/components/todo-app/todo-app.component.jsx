@@ -9,8 +9,6 @@ import InputTodo from '../input-todo/input-todo.component';
 import TodoList from '../todo-list/todo-list.component';
 import ListFooter from '../list-footer/list-footer.component';
 
-// import ITEMS_LIST from '../todo-list/todo-list.data';
-
 
 const TODO_FILTERS = {
     SHOW_ALL: () => true,
@@ -60,21 +58,11 @@ const TodoApp = () => {
         }
     };
     
-    const clearRestCompleted = async () => {
-        try {
-            let data = api.getRestTodos();
-            data.forEach((todo) => {
-                completeRestTodo(todo.id, todo.text, true);
-            });
-        } catch (error) {
-            console.error(error);
-        }
-    };
+    const clearRestCompleted = () => filteredTodos.forEach(todo => todo.completed ? deleteRestTodo(todo.id) : null);
 
     // Reload the todo list from the database to see the latest changes
     const getRestTodos = async () => {
         let fetchedTodos = await api.getRestTodos();
-        console.log('Mid Get');
         setRestTodos(fetchedTodos);
     };
 
@@ -89,7 +77,7 @@ const TodoApp = () => {
     // Logger to track state change of restTodos
     useEffect(() => {
         getRestTodos()
-    }, []);
+    }, [setRestTodos]);
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -113,13 +101,14 @@ const TodoApp = () => {
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-    const onToggleAll = () => filteredTodos.forEach(
-        todo => actions.completeRestTodo(
-            todo.id,
-            todo.text,
-            todo.completed
-        )
-    );
+    const onToggleAll = () => {
+        if (allSelected) {
+            filteredTodos.forEach(todo => actions.completeRestTodo(todo.id, todo.text, true));
+        }
+        if (!allSelected) {
+            filteredTodos.forEach(todo => actions.completeRestTodo(todo.id, todo.text, false));
+        }
+    };
 
     const allSelected = filteredTodos.every(todo => todo.completed);
     

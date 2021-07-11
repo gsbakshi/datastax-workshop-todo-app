@@ -1,4 +1,4 @@
-import { getRestClient, key, tableName } from './utils/astra-client';
+const { getRestClient, key, tableName } = require('./utils/astra-rest-client');
 
 const handler = async (event, context) => {
     const todos = await getRestClient();
@@ -6,7 +6,7 @@ const handler = async (event, context) => {
     event.body.key = 'todo';
     
     const res = await todos.post(`/api/rest/v2/keyspaces/${key}/${tableName}`, event.body);
-    if (res.statusCode == 201) {
+    if (res.statusCode === 201) {
         return {
             statusCode: res.status,
             body: JSON.stringify(res.data),
@@ -22,4 +22,4 @@ const handler = async (event, context) => {
     }
 };
 
-export default handler;
+module.exports = { handler };

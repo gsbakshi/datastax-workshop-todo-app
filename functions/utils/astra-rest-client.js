@@ -1,4 +1,4 @@
-const { createClient } = require("@astrajs/rest");
+const { createClient } = require('@astrajs/rest');
 
 let astraRestClient = null;
 

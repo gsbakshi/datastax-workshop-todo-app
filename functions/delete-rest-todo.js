@@ -1,4 +1,4 @@
-import { getRestClient, key, tableName } from './utils/astra-client';
+const { getRestClient, key, tableName } = require('./utils/astra-rest-client');
 
 const handler = async (event, context) => {
     const todos = await getRestClient();
@@ -21,4 +21,4 @@ const handler = async (event, context) => {
     }
 };
 
-export default handler;
+module.exports = { handler };

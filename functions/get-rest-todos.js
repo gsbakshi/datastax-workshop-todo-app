@@ -1,4 +1,4 @@
-import { getRestClient, wait, key, tableName  } from './utils/astra-client';
+const { getRestClient, wait, key, tableName } = require('./utils/astra-rest-client');
 
 const getClient = async () => {
     let client = await getRestClient();
@@ -10,12 +10,11 @@ const getClient = async () => {
 }
 
 const handler = async (event, context) => {
+    console.log('entered get handler');
     const todos = await getClient();
     let res;
-    console.log('entered get handler');
     try {
-        // res = await todos.get(`/api/rest/v2/keyspaces/${key}/${tableName}?where=${{'key':{'$eq':'rest'}}}`);
-        res = await todos.get(`/api/rest/v2/keyspaces/${key}/${tableName}?where={'key':{'$eq': ${tableName}}}`);
+        res = await todos.get(`/api/rest/v2/keyspaces/${key}/${tableName}?where={"key":{"$eq":"${tableName}"}}`)
         const formattedTodos = Object.keys(res.data).map((item) => res.data[item]);
         return {
             statusCode: 200,
@@ -32,4 +31,4 @@ const handler = async (event, context) => {
     }
 };
 
-export default handler;
+module.exports = { handler };

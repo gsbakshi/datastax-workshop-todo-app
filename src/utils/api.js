@@ -17,7 +17,7 @@ const addRestTodo = async (todo) => {
     console.log("%c\t%s", responseStyle, stringifiedBody)
     //                                                                                          *
     
-    const response = await fetch("/.netlify/functions/createRestTodo", {
+    const response = await fetch("/.netlify/functions/create-rest-todo", {
         body: stringifiedBody,
         method: "POST",
     });
@@ -39,10 +39,8 @@ const getRestTodos = async () => {
     console.log('%cPATH /api/rest/v2/keyspaces/todos/rest?where={"key":{"$eq":"rest"}} using METHOD GET', responseStyle);
     //                                                                                          *
     
-    const response = await fetch(`/.netlify/functions/getRestTodos`);
-    console.log('X');
+    const response = await fetch(`/.netlify/functions/get-rest-todos`);
     let todos = await response.json();
-    console.log(todos);
     
     //                                                                                          *
     console.log('%cResponse from Getting Rest Todos', responseStyle);
@@ -65,7 +63,7 @@ const updateRestTodo = async (todo) => {
     console.log("%c\t%s", responseStyle, stringifiedBody)
     //                                                                                          *
     
-    const response = await fetch("/.netlify/functions/updateRestTodo", {
+    const response = await fetch("/.netlify/functions/update-rest-todo", {
         body: stringifiedBody,
         method: "PUT",
     });
@@ -89,7 +87,7 @@ const deleteRestTodo = async (id) => {
     console.log("%cWith the following BODY = ", responseStyle)
     console.log("%c\t%s", responseStyle, stringifiedBody)
     
-    const response = await fetch("/.netlify/functions/deleteRestTodo", {
+    const response = await fetch("/.netlify/functions/delete-rest-todo", {
         body: stringifiedBody,
         method: "DELETE",
     });
