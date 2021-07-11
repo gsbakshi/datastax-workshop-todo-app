@@ -3,41 +3,29 @@ import React from 'react';
 import './todo-list.styles.scss';
 
 import Todo from '../todo/todo.component';
+import ToggleAll from '../toggle-all/toggle-all.component';
 
-const TodoList = ({ filteredTodos, actions }) => {
-
-    // const onToggleAll = () => {
-    //         filteredTodos.forEach(todo => todo.id === id ? todo.completed : todo);
-    //     };
-
-    // const allSelected = () => filteredTodos.every(todo => todo.completed);
-
-    return (
-        <section className='list-container'>
-            <input
-                id="toggle-all"
-                type="checkbox"
-                className="toggle-all"
-                // checked={ allSelected }
-                // onChange={ onToggleAll }
-            />
-            <label htmlFor="toggle-all" />
-            <div className='todo-list' >
-                {
-                    filteredTodos.map(
-                        (todo) => (
-                            <Todo
-                                key={ todo.id }
-                                todo={ todo }
-                                { ...actions }
-                            />
-                        )
+const TodoList = ({ filteredTodos, actions, onToggleAll, allSelected }) => (
+    <section className='list-container'>
+        <ToggleAll
+            onToggleAll={ onToggleAll }
+            allSelected={ allSelected }
+        />
+        <div className='todo-list' >
+            {
+                filteredTodos.map(
+                    (todo) => (
+                        <Todo
+                            key={ todo.id }
+                            todo={ todo }
+                            { ...actions }
+                        />
                     )
-                }
-            </div>
+                )
+            }
+        </div>
             
-        </section>
-    );
-};
+    </section>
+);
 
 export default TodoList;

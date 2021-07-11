@@ -1,4 +1,4 @@
-import { createClient } from '@astrajs/rest';
+const { createClient } = require("@astrajs/rest");
 
 let astraRestClient = null;
 
@@ -109,4 +109,4 @@ const getRestClient = async () => {
     return astraRestClient;
 };
 
-export default { getRestClient, requestWithRetry, wait, astraRestClient, key, tableName };
+module.exports = { getRestClient, requestWithRetry, wait, astraRestClient, key, tableName };

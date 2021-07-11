@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { uuid } from 'assert-plus';
+import { v1 as uuidv1 } from 'uuid';
 
 import './todo-app.styles.scss';
 
@@ -22,18 +22,17 @@ const TodoApp = () => {
 
     //=============================================================================         Network Call Handling
 
-    const [restTodos, setRestTodos] = useState([...ITEMS_LIST, ...ITEMS_LIST]);
+    const [restTodos, setRestTodos] = useState([...ITEMS_LIST]);
 
     const addRestTodo = async text => {
         try {
-            console.log('Add Todo');
-            // await api.addRestTodo({
-            //     id: uuid.v1(),
-            //     completed: false,
-            //     text: text,
-            //     key: 'rest',
-            // });
-            // getRestTodos();
+            await api.addRestTodo({
+                id: uuidv1(),
+                completed: false,
+                text: text,
+                key: 'rest',
+            });
+            getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -41,9 +40,8 @@ const TodoApp = () => {
     
     const deleteRestTodo = async id => {
         try {
-            console.log('Delete Todo');
-            // await api.deleteRestTodo(id);
-            // getRestTodos();
+            await api.deleteRestTodo(id);
+            getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -51,13 +49,12 @@ const TodoApp = () => {
 
     const completeRestTodo = async (id, text, completed) => {
         try {
-            console.log('Complete Todo');
-            // await api.updateRestTodo({
-            //     id,
-            //     text,
-            //     completed: !completed,
-            // });
-            // getRestTodos();
+            await api.updateRestTodo({
+                id,
+                text,
+                completed: !completed,
+            });
+            getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -65,11 +62,10 @@ const TodoApp = () => {
     
     const clearRestCompleted = async () => {
         try {
-            console.log('Clear All Todos');
-            // let data = api.getRestTodos();
-            // data.forEach((todo) => {
-            //     completeRestTodo(todo.id, todo.text, true);
-            // });
+            let data = api.getRestTodos();
+            data.forEach((todo) => {
+                completeRestTodo(todo.id, todo.text, true);
+            });
         } catch (error) {
             console.error(error);
         }
@@ -77,9 +73,10 @@ const TodoApp = () => {
 
     // Reload the todo list from the database to see the latest changes
     const getRestTodos = async () => {
-        console.log('Get Todos');
-        // let fetchedTodos = await api.getRestTodos();
-        // setRestTodos(fetchedTodos);
+        console.log('Start Get');
+        let fetchedTodos = await api.getRestTodos();
+        console.log('Mid Get');
+        console.log(fetchedTodos);
     };
 
     const actions = {
@@ -91,7 +88,9 @@ const TodoApp = () => {
     };
 
     // Logger to track state change of restTodos
-    useEffect(() => getRestTodos(), [restTodos]);
+    useEffect(() => {
+        getRestTodos()
+    }, [setRestTodos]);
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -110,10 +109,20 @@ const TodoApp = () => {
 
     const activeCount = restTodos.length - completedCount;
 
-    const anyTodoCompleted = restTodos.some(todo => !todo.completed);
+    const anyTodoCompleted = restTodos.some(todo => todo.completed);
     
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    const onToggleAll = () => filteredTodos.forEach(
+        todo => actions.completeRestTodo(
+            todo.id,
+            todo.text,
+            todo.completed
+        )
+    );
+
+    const allSelected = filteredTodos.every(todo => todo.completed);
     
     return (
         <div className='todoapp'>
@@ -122,6 +131,8 @@ const TodoApp = () => {
                 <TodoList
                     filteredTodos={ filteredTodos }
                     actions={ actions }
+                    allSelected={ allSelected }
+                    onToggleAll={ onToggleAll }
                 />
                 <ListFooter
                     completedCount={ completedCount }
