@@ -26,13 +26,14 @@ const TodoApp = () => {
 
     const addRestTodo = async text => {
         try {
-            await api.addRestTodo({
-                id: uuid.v1(),
-                completed: false,
-                text: text,
-                key: 'rest',
-            });
-            getRestTodos();
+            console.log('Add Todo');
+            // await api.addRestTodo({
+            //     id: uuid.v1(),
+            //     completed: false,
+            //     text: text,
+            //     key: 'rest',
+            // });
+            // getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -40,8 +41,9 @@ const TodoApp = () => {
     
     const deleteRestTodo = async id => {
         try {
-            await api.deleteRestTodo(id);
-            getRestTodos();
+            console.log('Delete Todo');
+            // await api.deleteRestTodo(id);
+            // getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -49,12 +51,13 @@ const TodoApp = () => {
 
     const completeRestTodo = async (id, text, completed) => {
         try {
-            await api.updateRestTodo({
-                id,
-                text,
-                completed: !completed,
-            });
-            getRestTodos();
+            console.log('Complete Todo');
+            // await api.updateRestTodo({
+            //     id,
+            //     text,
+            //     completed: !completed,
+            // });
+            // getRestTodos();
         } catch (error) {
             console.error(error);
         }
@@ -62,10 +65,11 @@ const TodoApp = () => {
     
     const clearRestCompleted = async () => {
         try {
-            let data = api.getRestTodos();
-            data.forEach((todo) => {
-                completeRestTodo(todo.id, todo.text, true);
-            });
+            console.log('Clear All Todos');
+            // let data = api.getRestTodos();
+            // data.forEach((todo) => {
+            //     completeRestTodo(todo.id, todo.text, true);
+            // });
         } catch (error) {
             console.error(error);
         }
@@ -73,8 +77,9 @@ const TodoApp = () => {
 
     // Reload the todo list from the database to see the latest changes
     const getRestTodos = async () => {
-        let fetchedTodos = await api.getRestTodos();
-        setRestTodos(fetchedTodos);
+        console.log('Get Todos');
+        // let fetchedTodos = await api.getRestTodos();
+        // setRestTodos(fetchedTodos);
     };
 
     const actions = {
@@ -105,7 +110,7 @@ const TodoApp = () => {
 
     const activeCount = restTodos.length - completedCount;
 
-    const anyTodoCompleted = restTodos.some(todo => todo.completed);
+    const anyTodoCompleted = restTodos.some(todo => !todo.completed);
     
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
