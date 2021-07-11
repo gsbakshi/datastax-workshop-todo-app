@@ -24,7 +24,6 @@ const TodoList = ({ filteredTodos, actions, onToggleAll, allSelected }) => (
                 )
             }
         </div>
-            
     </section>
 );
 

@@ -55,7 +55,7 @@ const getAstraRestClient = async () => {
 
 const createTable = async name => {
     await astraRestClient.post(
-        '/api/rest/v2/schemas/keyspaces/${key}/tables',
+        `/api/rest/v2/schemas/keyspaces/${key}/tables`,
         {
             'name': name,
             'ifNotExists': true,
@@ -89,7 +89,7 @@ const createTable = async name => {
     );
 
     await astraRestClient.post(
-        '/api/rest/v2/schemas/keyspaces/${key}/tables/' + name + '/indexes',
+        `/api/rest/v2/schemas/keyspaces/${key}/tables/${name}/indexes`,
         {
             'column': 'key',
             'name': 'key_idx',

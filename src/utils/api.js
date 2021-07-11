@@ -40,7 +40,9 @@ const getRestTodos = async () => {
     //                                                                                          *
     
     const response = await fetch(`/.netlify/functions/getRestTodos`);
+    console.log('X');
     let todos = await response.json();
+    console.log(todos);
     
     //                                                                                          *
     console.log('%cResponse from Getting Rest Todos', responseStyle);

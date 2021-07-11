@@ -9,7 +9,7 @@ import InputTodo from '../input-todo/input-todo.component';
 import TodoList from '../todo-list/todo-list.component';
 import ListFooter from '../list-footer/list-footer.component';
 
-import ITEMS_LIST from '../todo-list/todo-list.data';
+// import ITEMS_LIST from '../todo-list/todo-list.data';
 
 
 const TODO_FILTERS = {
@@ -22,7 +22,7 @@ const TodoApp = () => {
 
     //=============================================================================         Network Call Handling
 
-    const [restTodos, setRestTodos] = useState([...ITEMS_LIST]);
+    const [restTodos, setRestTodos] = useState([]);
 
     const addRestTodo = async text => {
         try {
@@ -73,10 +73,9 @@ const TodoApp = () => {
 
     // Reload the todo list from the database to see the latest changes
     const getRestTodos = async () => {
-        console.log('Start Get');
         let fetchedTodos = await api.getRestTodos();
         console.log('Mid Get');
-        console.log(fetchedTodos);
+        setRestTodos(fetchedTodos);
     };
 
     const actions = {
@@ -90,7 +89,7 @@ const TodoApp = () => {
     // Logger to track state change of restTodos
     useEffect(() => {
         getRestTodos()
-    }, [setRestTodos]);
+    }, []);
 
     //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 

@@ -12,6 +12,7 @@ const getClient = async () => {
 const handler = async (event, context) => {
     const todos = await getClient();
     let res;
+    console.log('entered get handler');
     try {
         // res = await todos.get(`/api/rest/v2/keyspaces/${key}/${tableName}?where=${{'key':{'$eq':'rest'}}}`);
         res = await todos.get(`/api/rest/v2/keyspaces/${key}/${tableName}?where={'key':{'$eq': ${tableName}}}`);
