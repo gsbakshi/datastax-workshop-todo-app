@@ -2,6 +2,7 @@
 	padding: 10px 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 	height: 20px;
 	text-align: center;
 	font-size: 15px;
@@ -62,10 +63,11 @@
     }
 
     .clear-completed{
+        float: right;
+        position: relative;
+        right: 0;
 
         &:active {
-            float: right;
-            position: relative;
             line-height: 19px;
             text-decoration: none;
             cursor: pointer;

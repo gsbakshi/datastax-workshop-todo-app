@@ -14,7 +14,7 @@ const FILTERS_LIST = [
     "SHOW_COMPLETED",
 ];
 
-const ListFooter = ({ activeCount, filter : selectedFilter, onShowFiltered, }) => {
+const ListFooter = ({ activeCount, filter: selectedFilter, onShowFiltered, onClearCompleted, anyTodoCompleted }) => {
 
     // Logger to track active items change in console
     useEffect(
@@ -38,7 +38,7 @@ const ListFooter = ({ activeCount, filter : selectedFilter, onShowFiltered, }) =
                         (filter) => (
                             <div className='filter-container' key={ filter }>
                                 <button
-                                    className={ `${ filter === selectedFilter ? 'selected' : '' } filter` }
+                                    className={ `${filter === selectedFilter ? 'selected' : ''} filter` }
                                     onClick={ () => onShowFiltered(filter) }
                                 >
                                     { FILTER_TITLES[filter] }
@@ -48,12 +48,13 @@ const ListFooter = ({ activeCount, filter : selectedFilter, onShowFiltered, }) =
                     )
                 }
             </div>
-
-            {/* { anyDone && (
-                <button className="clear-completed" onClick={ onClearCompleted }>
-                    Clear completed
-                </button>
-            ) } */}
+            {
+                anyTodoCompleted ? (
+                    <button className='clear-completed' onClick={ onClearCompleted }>
+                        Clear completed
+                    </button>
+                ) : null
+            }
         </div>
     );
 };
