@@ -1,6 +1,10 @@
 <!--- STARTEXCLUDE --->
 # Todos with AstraDB 📒
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3453c8b9-27ca-4c74-9bc8-929efc89512e/deploy-status)](https://app.netlify.com/sites/astra-todos/deploys)
+
+#
+
 A Todo Application in React with DataStax Astra free tier database. 
 
 *Fixed the issue with production deployment. There may be some lag experienced in normal operation.*
