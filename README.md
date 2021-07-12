@@ -9,12 +9,12 @@ A Todo Application in React with DataStax Astra free tier database.
 
 ## Table of contents
 
-1. [Objectives](#🎯-objectives)
-2. [Features](#💎-features)
-3. [Issues](#⚠️-issues)
+1. [Objectives](#:dart:-objectives)
+2. [Features](#:gem:-features)
+3. [Issues](#:warning:-issues)
 
 
-## 🎯 Objectives
+## :dart: Objectives
 * Create a "from scratch" **React** app using NPX
 * Learn about **React** components and how they are used to dynamically update the DOM with new information
 * Learn how **hooks** are used
@@ -25,7 +25,7 @@ A Todo Application in React with DataStax Astra free tier database.
 
 
 
-## 💎 Features
+## :gem: Features
 * Create a new **Todo**
 * Complete a **Todo**
 * Delete a **Todo**
@@ -49,7 +49,7 @@ A Todo Application in React with DataStax Astra free tier database.
 [🏠 Back to Table of Contents](#table-of-contents)
 
 
-## ⚠️ Issues
+## :warning: Issues
 * Currently there's an issue with .env variables in the production app deployed on **Netlify**, so the deployed link isn't working yet
 * Double click a **Todo** to edit feature isn't enabled yet, but will be fixed soon.
 
