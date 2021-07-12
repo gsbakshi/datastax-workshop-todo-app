@@ -2,6 +2,9 @@
 # Todos with AstraDB 📒
 
 A Todo Application in React with DataStax Astra free tier database. 
+
+*Fixed the issue with production deployment. There may be some lag experienced in normal operation.*
+
 <!--- ENDEXCLUDE --->
 
 ![image](https://github.com/gsbakshi/todos-w-astra/blob/main/images/Screenshot%202021-07-12%20at%203.57-1.png)
@@ -50,7 +53,6 @@ A Todo Application in React with DataStax Astra free tier database.
 
 
 ## :warning: Issues
-* Currently there's an issue with .env variables in the production app deployed on **Netlify**, so the deployed link isn't working yet
 * Double click a **Todo** to edit feature isn't enabled yet, but will be fixed soon.
 
 
