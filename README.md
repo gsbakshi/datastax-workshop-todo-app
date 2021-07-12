@@ -15,7 +15,7 @@ A Todo Application in React with DataStax Astra free tier database.
 
 
 ## :dart: Objectives
-* Create a "from scratch" **React** app using NPX
+* Create a "from scratch" **React** app using NPX and CRA
 * Learn about **React** components and how they are used to dynamically update the DOM with new information
 * Learn how **hooks** are used
 * Learn how to use Swagger to interact with the database using a **REST** API 
