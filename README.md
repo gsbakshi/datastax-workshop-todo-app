@@ -2,6 +2,10 @@
 
 *This is the test branch where all the changes are tried and tested out before being pushed to main and then production.*
 
+## :bang bang: Fixed Issues
+* Fixed the issue with .env variables in the production app deployed on **Netlify**
+
+
 ## :warning: On Going Issues
 * Currently there's an issue with .env variables in the production app deployed on **Netlify**, so the deployed link isn't working yet
 * Double click a **Todo** to edit feature isn't enabled yet, but will be fixed soon.
