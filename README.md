@@ -8,12 +8,7 @@ A Todo Application in React with DataStax Astra free tier database.
 
 # Test branch
 
-```
-
-This is the test branch where all the changes are tried and tested out 
-before being pushed to main and then production.
-
-```
+`This is the test branch where all the changes are tried and tested out before being pushed to main and then production.`
 
 
 ## Table of contents
