@@ -9,9 +9,9 @@ A Todo Application in React with DataStax Astra free tier database.
 
 ## Table of contents
 
-1. [Objectives](#objectives)
-2. [Features](#features)
-3. [Issues](#issues)
+1. [Objectives](#🎯-objectives)
+2. [Features](#💎-features)
+3. [Issues](#⚠️-issues)
 
 
 ## 🎯 Objectives
