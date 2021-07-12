@@ -10,11 +10,11 @@ A Todo Application in React with DataStax Astra free tier database.
 ## Table of contents
 
 1. [Objectives](#objectives)
-2. [Features](#💎-features)
+2. [Features](#features)
 3. [Issues](#issues)
 
 
-## :dart: ## Objectives
+## :dart: Objectives
 * Create a "from scratch" **React** app using NPX
 * Learn about **React** components and how they are used to dynamically update the DOM with new information
 * Learn how **hooks** are used
