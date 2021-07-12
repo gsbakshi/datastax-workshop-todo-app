@@ -1,14 +1,6 @@
-<!--- STARTEXCLUDE --->
-# Todos with AstraDB 📒
-
-A Todo Application in React with DataStax Astra free tier database. 
-<!--- ENDEXCLUDE --->
-
-![image](https://github.com/gsbakshi/todos-w-astra/blob/main/images/Screenshot%202021-07-12%20at%203.57-1.png)
-
 # Test branch
 
-`This is the test branch where all the changes are tried and tested out before being pushed to main and then production.`
+*This is the test branch where all the changes are tried and tested out before being pushed to main and then production.*
 
 
 ## Table of contents
