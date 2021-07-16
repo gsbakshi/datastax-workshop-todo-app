@@ -64,5 +64,5 @@ A Todo Application in React with DataStax Astra free tier database.
 
 
 ### Things to Note:
- - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
+ - The contents of this repo are based on [Jake's fork](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
 <!--- ENDEXCLUDE --->
