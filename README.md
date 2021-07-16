@@ -2,7 +2,7 @@
 
 *This is the test branch where all the changes are tried and tested out before being pushed to main and then production.*
 
-## :bang bang: Fixed Issues
+## :bangbang: Fixed Issues
 * Fixed the issue with .env variables in the production app deployed on **Netlify**
 
 
