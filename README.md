@@ -7,7 +7,6 @@
 
 
 ## :warning: On Going Issues
-* Currently there's an issue with .env variables in the production app deployed on **Netlify**, so the deployed link isn't working yet
 * Double click a **Todo** to edit feature isn't enabled yet, but will be fixed soon.
 
 
