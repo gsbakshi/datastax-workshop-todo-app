@@ -6,7 +6,7 @@ const handler = async (event, context) => {
     
     try {
         let delete_path = `/api/rest/v2/keyspaces/${key}/${tableName}/${body.id}`;
-        const res = await todos.delete(delete_path);
+        await todos.delete(delete_path);
         return {
             statusCode: 204,
             headers: {
