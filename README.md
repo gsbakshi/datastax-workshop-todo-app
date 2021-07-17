@@ -1,5 +1,4 @@
-<!--- STARTEXCLUDE --->
-# Todos with AstraDB 📒
+# Test branch
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3453c8b9-27ca-4c74-9bc8-929efc89512e/deploy-status)](https://app.netlify.com/sites/astra-todos/deploys)
 
@@ -11,7 +10,8 @@ A Todo Application in React with DataStax Astra free tier database.
 
 <!--- ENDEXCLUDE --->
 
-![image](https://github.com/gsbakshi/todos-w-astra/blob/main/images/Screenshot%202021-07-12%20at%203.57-1.png)
+## :bangbang: Fixed Issues
+* Fixed the issue with .env variables in the production app deployed on **Netlify**
 
 
 ## Table of contents
@@ -60,8 +60,8 @@ A Todo Application in React with DataStax Astra free tier database.
 * Double click a **Todo** to edit feature isn't enabled yet, but will be fixed soon.
 
 
-[🏠 Back to Table of Contents](#table-of-contents)
-
+## :cyclone: Planned Updates/Features
+* Bug Fixing
 
 ### Things to Note:
  - The contents of this repo are based on [Jake's fork](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
