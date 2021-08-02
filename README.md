@@ -1,8 +1,11 @@
 
 <!--- STARTEXCLUDE --->
-# ![image](src/assets/logo/cover.png)
+# Todos with Astra
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3453c8b9-27ca-4c74-9bc8-929efc89512e/deploy-status)](https://app.netlify.com/sites/astra-todos/deploys)
+
+![image](https://github.com/gsbakshi/todos-w-astra/blob/main/src/assets/logo/cover.png)
+#
 
 A Todo Application in React with DataStax Astra free tier database. 
 <!--- ENDEXCLUDE --->
