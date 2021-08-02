@@ -1,5 +1,9 @@
+![image](https://github.com/gsbakshi/todos-w-astra/blob/main/src/assets/logo/cover.png)
+
 <!--- STARTEXCLUDE --->
-# Todos with AstraDB 📒
+# Todos with AstraDB
+
+![image](https://github.com/gsbakshi/gflix/blob/main/images/Screenshot%202021-07-21%20at%2010.00.png)
 
 A Todo Application in React with DataStax Astra free tier database. 
 <!--- ENDEXCLUDE --->
