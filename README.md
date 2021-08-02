@@ -3,7 +3,7 @@
 <!--- STARTEXCLUDE --->
 # Todos with AstraDB
 
-![image](https://github.com/gsbakshi/gflix/blob/main/images/Screenshot%202021-07-21%20at%2010.00.png)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3453c8b9-27ca-4c74-9bc8-929efc89512e/deploy-status)](https://app.netlify.com/sites/astra-todos/deploys)
 
 A Todo Application in React with DataStax Astra free tier database. 
 <!--- ENDEXCLUDE --->
@@ -62,5 +62,5 @@ A Todo Application in React with DataStax Astra free tier database.
 
 
 ### Things to Note:
- - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
+ - The contents of this repo are based on [Jake's fork](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
 <!--- ENDEXCLUDE --->
